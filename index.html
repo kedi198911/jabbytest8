@@ -69,9 +69,25 @@
 
 		<!-- Slider -->
 		<div class="w3slideraits">
-		      <div class="videoUiWrapper thumbnail"  >
-				   <img src="images/backg.jpg" alt=" ">
+		      <div class="videoUiWrapper thumbnail" style="background:url(bg1.png) ; width: 100%; height: auto;" >
+				       <audio style="display: none;" preload="preload"  controls id="cxyw_audio"></audio> 
+                        <video width="100%" height="auto"  id="demo1" loop="loop" autoplay="autoplay" style="background:transparent url('bg.png') 100% 100% no-repeat;">
+                            
+                            <source src="cx.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
             </div> 
+  <!-- 必须加在微信api资源 --> 
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+<script> Montserrat
+     //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以 
+     document.getElementById('cxyw_audio').play(); 
+    //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效 
+    document.addEventListener("WeixinJSBridgeReady", function () { 
+        document.getElementById('cxyw_audio').play(); 
+        document.getElementById('demo1').play(); 
+    }, false); 
+</script> 
 
 		</div>
 		<!-- //Slider -->
